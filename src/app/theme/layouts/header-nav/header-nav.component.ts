@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, AfterViewInit } from '@angular/core';
 import { Helpers } from '../../../helpers';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 declare let mLayout: any;
 @Component({
@@ -10,7 +11,7 @@ declare let mLayout: any;
 export class HeaderNavComponent implements OnInit, AfterViewInit {
 
 
-    constructor() {
+    constructor(public afAuth: AngularFireAuth) {
 
     }
     ngOnInit() {
@@ -19,7 +20,6 @@ export class HeaderNavComponent implements OnInit, AfterViewInit {
     ngAfterViewInit() {
 
         mLayout.initHeader();
-
     }
 
 }

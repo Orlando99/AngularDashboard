@@ -5,8 +5,8 @@
 
 
 export const environment = {
-    production: false, 
-    firebase: { 
+    production: false,
+    firebase: {
         apiKey: "AIzaSyCDm_xA5iXM3DWr9xK9AVdnlpd8bYP2040",
         authDomain: "nupekdashboard.firebaseapp.com",
         databaseURL: "https://nupekdashboard.firebaseio.com",
@@ -14,5 +14,5 @@ export const environment = {
         storageBucket: "nupekdashboard.appspot.com",
         messagingSenderId: "944042670943"
     }
-    
-  };
+
+};

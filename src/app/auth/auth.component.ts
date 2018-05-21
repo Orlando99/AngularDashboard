@@ -8,8 +8,9 @@ import { AlertComponent } from './_directives/alert.component';
 import { Helpers } from '../helpers';
 
 import { AngularFireAuth } from 'angularfire2/auth';
-import { firebase } from '@firebase/app';
-
+// import { firebase } from '@firebase/app';
+import * as firebase from 'firebase/app';
+import 'firebase/storage';
 
 declare let $: any;
 declare let mUtil: any;
@@ -72,23 +73,26 @@ export class AuthComponent implements OnInit {
         //     this._alertService.error(error);
         //     this.loading = false;
         // });
-               this.loading = true;
-        this._authService.login(this.model.email, this.model.password).subscribe(
-            data => {
-                
+        this.loading = true;
+        // this._authService.login(this.model.email, this.model.password).subscribe(
+            this._authService.login(this.model)
+            .then(res => {
+        //      data => {
                 console.log(this.returnUrl);
                 this._router.navigate([this.returnUrl]);
             },
-            error => {
+            err => {
                 this.showAlert('alertSignin');
-                this._alertService.error(error);
+                this._alertService.error(err);
                 this.loading = false;
-            }); 
+            });
     }
 
     signup() {
         this.loading = true;
-        this.afAuth.auth.createUserWithEmailAndPassword(this.model.email, this.model.password).then(() => {
+        // this.afAuth.auth.createUserWithEmailAndPassword(this.model.email, this.model.password).then(() => {
+        this._authService.doRegister(this.model)
+        .then(res => {
             this.showAlert('alertSignin');
             this._alertService.success(
                 'Thank you. To complete your registration please check your email.',
@@ -96,15 +100,14 @@ export class AuthComponent implements OnInit {
             this.loading = false;
             this.displaySignInForm();
             this.model = {};
-        }, (error) => {
+        // }, (error) => {
+        }, err => {
             this.showAlert('alertSignup');
-            this._alertService.error(error);
+            this._alertService.error(err);
             this.loading = false;
         });
 
-
-
-        this.loading = true;
+        // this.loading = true;
         /**this._userService.create(this.model).subscribe(
             data => {
                 this.showAlert('alertSignin');

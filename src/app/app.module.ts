@@ -12,6 +12,7 @@ import { AuthModule } from "./auth/auth.module";
 
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
@@ -28,6 +29,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
         ThemeRoutingModule,
         AuthModule,
         AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
         AngularFireAuthModule
     ],
     providers: [ScriptLoaderService],

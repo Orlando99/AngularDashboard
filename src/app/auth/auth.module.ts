@@ -35,9 +35,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
         UserService,
         AngularFireAuth,
         // api backend simulation
-        fakeBackendProvider,
-        MockBackend,
-        BaseRequestOptions,
+        // fakeBackendProvider,
+        // MockBackend,
+        // BaseRequestOptions,
     ],
     entryComponents: [AlertComponent],
 })
