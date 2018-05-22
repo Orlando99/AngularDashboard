@@ -10,30 +10,6 @@ import { auth } from "firebase/app";
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-    // constructor(private _router: Router, private _userService: UserService) {
-    // }
-
-    // canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-        // let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        // let currentUser = firebase.auth().currentUser;
-        // return this._userService.verify().map(
-        //     data => {
-        //         if (data !== null) {
-        //             // logged in so return true
-        //             return true;
-        //         }
-        //         // error when verify so redirect to login page with the return url
-        //         // this._router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
-        //         return true;
-        //     },
-        //     error => {
-        //         // error when verify so redirect to login page with the return url
-        //         // this._router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
-        //         // return false;
-        //         return true;
-        //     });
-    // }
-    
     constructor(
         public afAuth: AngularFireAuth,
         public userService: UserService,
@@ -46,7 +22,12 @@ export class AuthGuard implements CanActivate {
             return new Promise((resolve, reject) => {
                 this.userService.getCurrentUser()
                 .then(user => {
-                    return resolve(true);
+                    if(user.emailVerified){
+                        return resolve(true);
+                    }else{
+                        this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+                        return resolve(false);
+                    } 
                 }, err => {
                     this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
                     return resolve(false);

@@ -11,7 +11,43 @@ const routes: Routes = [
         'children': [
             {
                 'path': 'index',
-                'loadChildren': '.\/pages\/default\/blank\/blank.module#BlankModule',
+                'loadChildren': '.\/pages\/dashboard\/overview\/overview.module#DashBoardOverViewModule',
+            },
+            {
+                'path': 'stream',
+                'loadChildren': '.\/pages\/streams\/overview\/overview.module#StreamsOverViewModule',
+            },
+            {
+                'path': 'analytics-overview',
+                'loadChildren': '.\/pages\/analytics\/overview\/overview.module#AnalyticsOverViewModule',
+            },
+            {
+                'path': 'api-overview',
+                'loadChildren': '.\/pages\/api\/overview\/overview.module#APIOverViewModule',
+            },
+            {
+                'path': 'settings-account',
+                'loadChildren': '.\/pages\/settings\/myaccount\/myaccount.module#SettingsMyAccountModule',
+            },
+            {
+                'path': 'settings-billing',
+                'loadChildren': '.\/pages\/settings\/billing\/billing.module#SettingsBillingModule',
+            },
+            {
+                'path': 'settings-communication',
+                'loadChildren': '.\/pages\/settings\/communication\/communication.module#SettingsCommunicationModule',
+            },
+            {
+                'path': 'support-faqs',
+                'loadChildren': '.\/pages\/support\/faqs\/faqs.module#SupportFAQsModule',
+            },
+            {
+                'path': 'support-ticket',
+                'loadChildren': '.\/pages\/support\/ticket\/ticket.module#SupportTicketModule',
+            },
+            {
+                'path': 'support-contact',
+                'loadChildren': '.\/pages\/support\/contact\/contact.module#SupportContactModule',
             },
             {
                 'path': '',

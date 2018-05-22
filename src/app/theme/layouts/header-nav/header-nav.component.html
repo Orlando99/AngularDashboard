@@ -201,7 +201,7 @@
 					<div id="m_header_menu" class="m-header-menu m-aside-header-menu-mobile m-aside-header-menu-mobile--offcanvas  m-header-menu--skin-dark m-header-menu--submenu-skin-light m-aside-header-menu-mobile--skin-light m-aside-header-menu-mobile--submenu-skin-light"  >
 						<ul class="m-menu__nav  m-menu__nav--submenu-arrow">
 							<li class="m-menu__item    -tab  m-menu__item--submenu m-menu__item--tabs" routerLinkActive="m-menu__item--active-tab" routerLinkActiveOptions="{ exact: true }"   m-menu-submenu-toggle="tab" aria-haspopup="true">
-								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
+								<a  href="javascript:;" routerLink="/index" class="m-menu__link m-menu__toggle">
 									<span class="m-menu__link-text">
 										Dashboard
 									</span>
@@ -236,7 +236,7 @@
 								</div>
 							</li>
 							<li class="m-menu__item  m-menu__item--submenu m-menu__item--tabs" routerLinkActive="m-menu__item--active-tab" routerLinkActiveOptions="{ exact: true }"   m-menu-submenu-toggle="tab" aria-haspopup="true">
-								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
+								<a  href="javascript:;" routerLink="/stream" class="m-menu__link m-menu__toggle">
 									<span class="m-menu__link-text">
 										Streams
 									</span>
@@ -247,7 +247,7 @@
 									<span class="m-menu__arrow m-menu__arrow--adjust"></span>
 									<ul class="m-menu__subnav">
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"   m-menu-link-redirect="1" aria-haspopup="true">
-											<a  routerLink="/builder" class="m-menu__link">
+											<a  routerLink="/stream" class="m-menu__link">
 												<i class="m-menu__link-icon flaticon-graphic-2"></i>
 												<span class="m-menu__link-text">
 													Overview
@@ -271,7 +271,7 @@
 								</div>
 							</li>
 							<li class="m-menu__item  m-menu__item--submenu m-menu__item--tabs" routerLinkActive="m-menu__item--active-tab" routerLinkActiveOptions="{ exact: true }"   m-menu-submenu-toggle="tab" aria-haspopup="true">
-								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
+								<a  href="javascript:;" routerLink="/analytics-overview" class="m-menu__link m-menu__toggle">
 									<span class="m-menu__link-text">
 										Analytics
 									</span>
@@ -282,7 +282,7 @@
 									<span class="m-menu__arrow m-menu__arrow--adjust"></span>
 									<ul class="m-menu__subnav">
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"   m-menu-link-redirect="1" aria-haspopup="true">
-											<a  routerLink="/builder" class="m-menu__link">
+											<a  routerLink="/analytics-overview" class="m-menu__link">
 												<i class="m-menu__link-icon flaticon-graphic-2"></i>
 												<span class="m-menu__link-text">
 													Overview
@@ -325,7 +325,7 @@
 								</div>
 							</li>
 							<li class="m-menu__item  m-menu__item--submenu m-menu__item--tabs" routerLinkActive="m-menu__item--active-tab" routerLinkActiveOptions="{ exact: true }"   m-menu-submenu-toggle="tab" aria-haspopup="true">
-								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
+								<a  href="javascript:;" routerLink="/api-overview" class="m-menu__link m-menu__toggle">
 									<span class="m-menu__link-text">
 										API
 									</span>
@@ -336,7 +336,7 @@
 									<span class="m-menu__arrow m-menu__arrow--adjust"></span>
 									<ul class="m-menu__subnav">
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"   m-menu-link-redirect="1" aria-haspopup="true">
-											<a  routerLink="/builder" class="m-menu__link">
+											<a  routerLink="/api-overview" class="m-menu__link">
 												<i class="m-menu__link-icon flaticon-graphic-2"></i>
 												<span class="m-menu__link-text">
 													Overview
@@ -371,7 +371,7 @@
 								</div>
 							</li>
 							<li class="m-menu__item  m-menu__item--submenu m-menu__item--tabs" routerLinkActive="m-menu__item--active-tab" routerLinkActiveOptions="{ exact: true }"   m-menu-submenu-toggle="tab" aria-haspopup="true">
-								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
+								<a  href="javascript:;" routerLink="/settings-account" class="m-menu__link m-menu__toggle">
 									<span class="m-menu__link-text">
 										Settings
 									</span>
@@ -382,7 +382,7 @@
 									<span class="m-menu__arrow m-menu__arrow--adjust"></span>
 									<ul class="m-menu__subnav">
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"   m-menu-link-redirect="1" aria-haspopup="true">
-											<a  routerLink="/inner" class="m-menu__link">
+											<a  routerLink="/settings-account" class="m-menu__link">
 												<i class="m-menu__link-icon flaticon-avatar"></i>
 												<span class="m-menu__link-text">
 													My Account
@@ -390,7 +390,7 @@
 											</a>
 										</li>
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"   m-menu-link-redirect="1" aria-haspopup="true">
-											<a  routerLink="/inner" class="m-menu__link">
+											<a  routerLink="/settings-billing" class="m-menu__link">
 												<i class="m-menu__link-icon flaticon-coins"></i>
 												<span class="m-menu__link-text">
 													Billing
@@ -398,7 +398,7 @@
 											</a>
 										</li>
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"   m-menu-link-redirect="1" aria-haspopup="true">
-											<a  routerLink="/inner" class="m-menu__link">
+											<a  routerLink="/settings-communication" class="m-menu__link">
 												<i class="m-menu__link-icon flaticon-paper-plane"></i>
 												<span class="m-menu__link-text">
 													Communication
@@ -409,7 +409,7 @@
 								</div>
 							</li>
 							<li class="m-menu__item  m-menu__item--submenu m-menu__item--tabs" routerLinkActive="m-menu__item--active-tab" routerLinkActiveOptions="{ exact: true }"   m-menu-submenu-toggle="tab" aria-haspopup="true">
-								<a  href="javascript:;" class="m-menu__link m-menu__toggle">
+								<a  href="javascript:;" routerLink="/support-faqs" class="m-menu__link m-menu__toggle">
 									<span class="m-menu__link-text m--font-lifebuoy">
 										Support
 									</span>
@@ -420,7 +420,7 @@
 									<span class="m-menu__arrow m-menu__arrow--adjust"></span>
 									<ul class="m-menu__subnav">
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"   m-menu-link-redirect="1" aria-haspopup="true">
-											<a  routerLink="/inner" class="m-menu__link">
+											<a  routerLink="/support-faqs" class="m-menu__link">
 												<i class="m-menu__link-icon flaticon-info"></i>
 												<span class="m-menu__link-text">
 													FAQs
@@ -428,7 +428,7 @@
 											</a>
 										</li>
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"   aria-haspopup="true">
-											<a  routerLink="/builder" class="m-menu__link">
+											<a href = "http://docs.nupek.com/" class="m-menu__link">
 												<i class="m-menu__link-icon flaticon-notes"></i>
 												<span class="m-menu__link-text">
 													Documentation
@@ -436,7 +436,7 @@
 											</a>
 										</li>
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"   m-menu-link-redirect="1" aria-haspopup="true">
-											<a  routerLink="/inner" class="m-menu__link">
+											<a  routerLink="/support-ticket" class="m-menu__link">
 												<i class="m-menu__link-icon flaticon-paper-plane"></i>
 												<span class="m-menu__link-text">
 													Submit a Ticket
@@ -444,7 +444,7 @@
 											</a>
 										</li>
 										<li class="m-menu__item" routerLinkActive="m-menu__item--active" routerLinkActiveOptions="{ exact: true }"   m-menu-link-redirect="1" aria-haspopup="true">
-											<a  routerLink="/inner2" class="m-menu__link">
+											<a  routerLink="/support-contact" class="m-menu__link">
 												<i class="m-menu__link-icon flaticon-mail"></i>
 												<span class="m-menu__link-text">
 													Contact Us

@@ -63,34 +63,25 @@ export class AuthComponent implements OnInit {
     }
 
     signin() {
-        //  this.loading = true;
-        // this.afAuth.auth.signInWithEmailAndPassword(this.model.email, this.model.password).then(() => {
-        //     console.log(this.returnUrl);
-        //     localStorage.setItem('currentUser', JSON.stringify(this.model));
-        //     this._router.navigate(['/index']);
-        // }, (error) => {
-        //     this.showAlert('alertSignin');
-        //     this._alertService.error(error);
-        //     this.loading = false;
-        // });
         this.loading = true;
-        // this._authService.login(this.model.email, this.model.password).subscribe(
-            this._authService.login(this.model)
-            .then(res => {
-        //      data => {
-                console.log(this.returnUrl);
+        this._authService.login(this.model)
+        .then(res => {
+            if(this._userService.afAuth.auth.currentUser.emailVerified){    //check if the user's email is verified
                 this._router.navigate([this.returnUrl]);
-            },
-            err => {
+            }else{
                 this.showAlert('alertSignin');
-                this._alertService.error(err);
+                this._alertService.error('Please Verify your email address to login');
                 this.loading = false;
-            });
+            }
+        },err => {
+            this.showAlert('alertSignin');
+            this._alertService.error(err);
+            this.loading = false;
+        });
     }
 
     signup() {
         this.loading = true;
-        // this.afAuth.auth.createUserWithEmailAndPassword(this.model.email, this.model.password).then(() => {
         this._authService.doRegister(this.model)
         .then(res => {
             this.showAlert('alertSignin');
@@ -100,29 +91,11 @@ export class AuthComponent implements OnInit {
             this.loading = false;
             this.displaySignInForm();
             this.model = {};
-        // }, (error) => {
         }, err => {
             this.showAlert('alertSignup');
             this._alertService.error(err);
             this.loading = false;
         });
-
-        // this.loading = true;
-        /**this._userService.create(this.model).subscribe(
-            data => {
-                this.showAlert('alertSignin');
-                this._alertService.success(
-                    'Thank you. To complete your registration please check your email.',
-                    true);
-                this.loading = false;
-                this.displaySignInForm();
-                this.model = {};
-            },
-            error => {
-                this.showAlert('alertSignup');
-                this._alertService.error(error);
-                this.loading = false;
-            });**/
     }
 
     forgotPass() {
@@ -140,24 +113,6 @@ export class AuthComponent implements OnInit {
             this._alertService.error(error);
             this.loading = false;
         });
-
-
-        /**this.loading = true;
-        this._userService.forgotPassword(this.model.email).subscribe(
-            data => {
-                this.showAlert('alertSignin');
-                this._alertService.success(
-                    'Cool! Password recovery instruction has been sent to your email.',
-                    true);
-                this.loading = false;
-                this.displaySignInForm();
-                this.model = {};
-            },
-            error => {
-                this.showAlert('alertForgotPass');
-                this._alertService.error(error);
-                this.loading = false;
-            });**/
     }
 
     showAlert(target) {
